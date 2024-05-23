@@ -1,11 +1,13 @@
 import "@/styles/global.css";
-import { Opportunity } from "./components/NewOpportunity/Opportunity";
+import { RouterProvider } from "react-router-dom";
+import { routers } from "./router";
+import { ThemeProvider } from "@/components/themeProvider/themeProvider";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
-      <Opportunity />
-    </div>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <RouterProvider router={routers} />
+    </ThemeProvider>
   );
 }
 
