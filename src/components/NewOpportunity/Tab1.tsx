@@ -6,19 +6,19 @@ import { Info, UserRound } from "lucide-react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 
-export const Tab1: React.FC<{ nextTab: () => void }> = ({ nextTab }) => {
+export const Tab1: React.FC<{ nextTab: () => void }> = () => {
   const {
     register,
-    formState: { errors },
+    // formState: { errors },
     trigger,
   } = useFormContext<z.infer<typeof opportunityFormSchema>>();
 
-  const handleNext = async () => {
-    const isValid = await trigger("jobTitle");
-    if (isValid) {
-      nextTab();
-    }
-  };
+  // const handleNext = async () => {
+  //   const isValid = await trigger("jobTitle");
+  //   if (isValid) {
+  //     nextTab();
+  //   }
+  // };
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
