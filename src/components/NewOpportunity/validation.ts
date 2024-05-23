@@ -2,7 +2,10 @@ import { z } from "zod";
 
 export const opportunityFormSchema = z.object({
   // Campos de Tab1
-  jobTitle: z.string().min(1, "Job title is required"),
+  template: z.string().optional(),
+  reason: z.string().min(1, "Reason is required"),
+  approvalflow: z.string().min(1, "Approval flow is required"),
+  approvers: z.string().min(1, "Approvers are required"),
 
   // Campos de Tab2
   jobDescription: z.string().min(1, "Job description is required"),
