@@ -10,8 +10,10 @@ import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 
 export const Tab1: React.FC<{ nextTab: () => void }> = ({ nextTab }) => {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [open1, setOpen1] = React.useState(false);
+  const [value1, setValue1] = React.useState("");
+  const [open2, setOpen2] = React.useState(false);
+  const [value2, setValue2] = React.useState("");
   const navigate = useNavigate();
 
   const {
@@ -69,13 +71,13 @@ export const Tab1: React.FC<{ nextTab: () => void }> = ({ nextTab }) => {
             Usar um modelo de fluxo de requisição
           </Label>
           <Combobox
-            open={open}
-            options={options}
-            setOpen={setOpen}
-            setValue={setValue}
-            value={value}
-            placeholder=" "
             {...register("template")}
+            open={open1}
+            options={options}
+            setOpen={setOpen1}
+            setValue={setValue1}
+            value={value1}
+            placeholder=" "
           />
 
           <div className="rounded-lg px-4 py-3 flex items-center gap-3 bg-[#D4E7FC] dark:bg-[#081B30]">
@@ -127,11 +129,11 @@ export const Tab1: React.FC<{ nextTab: () => void }> = ({ nextTab }) => {
           </Label>
           <Combobox
             {...register("approvers")}
-            open={open}
+            open={open2}
             options={options}
-            setOpen={setOpen}
-            setValue={setValue}
-            value={value}
+            setOpen={setOpen2}
+            setValue={setValue2}
+            value={value2}
             placeholder="Busque pelo nome ou cargo do aprovador"
           />
           {errors.approvers && (
@@ -152,7 +154,11 @@ export const Tab1: React.FC<{ nextTab: () => void }> = ({ nextTab }) => {
         </div>
       </div>
 
-      <div>grid 2</div>
+      <div>
+        <div className="bg-white h-80 flex items-center justify-center">
+          grid2
+        </div>
+      </div>
     </div>
   );
 };
